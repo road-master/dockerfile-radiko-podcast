@@ -1,5 +1,6 @@
 <!-- markdownlint-disable first-line-h1 -->
 [![Test](https://github.com/road-master/radiko-podcast/workflows/Test/badge.svg)](https://github.com/road-master/radiko-podcast/actions?query=workflow%3ATest)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/mstmelody/radiko-podcast)](https://hub.docker.com/r/mstmelody/radiko-podcast/dockerfile)
 
 # クイックリファレンス
 
@@ -65,7 +66,6 @@ mkdir output
 
 ```yaml
 ---
-version: '3.8'
 services:
   radiko-podcast:
     image: mstmelody/radiko-podcast
