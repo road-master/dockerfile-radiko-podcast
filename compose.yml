@@ -1,0 +1,13 @@
+services:
+  radiko-podcast:
+    build:
+      args:
+        - DOCKER_IMAGE_TAG_PYTHON_FFMPEG=${DOCKER_IMAGE_TAG_PYTHON_FFMPEG:?err}
+        - VERSION_UV=${VERSION_UV:?err}
+        - VERSION_PYTHON=${VERSION_PYTHON:?err}
+        - VERSION_RADIKO_PODCAST=${VERSION_RADIKO_PODCAST:?err}
+      context: .
+    image: mstmelody/radiko-podcast:latest
+    volumes:
+      - ./config.yml:/workspace/config.yml
+      - ./output:/workspace/output
