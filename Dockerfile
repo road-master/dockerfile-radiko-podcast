@@ -1,12 +1,7 @@
-ARG DOCKER_IMAGE_TAG_PYTHON_FFMPEG=latest \
-    VERSION_UV=latest
-FROM ghcr.io/astral-sh/uv:${VERSION_UV} AS uv
+ARG DOCKER_IMAGE_TAG_PYTHON_FFMPEG=latest
 FROM mstmelody/python-ffmpeg:${DOCKER_IMAGE_TAG_PYTHON_FFMPEG}
 ARG VERSION_PYTHON=3.13.12 \
     VERSION_RADIKO_PODCAST=latest
-# - Using uv in Docker | uv
-#   https://docs.astral.sh/uv/guides/integration/docker/#installing-uv
-COPY --from=uv /uv /uvx /bin/
 RUN uv tool install --python "${VERSION_PYTHON}" "radikopodcast@${VERSION_RADIKO_PODCAST}" \
  && rm -rf /root/.cache/uv \
  && mkdir /workspace/output
