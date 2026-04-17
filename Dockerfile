@@ -1,6 +1,6 @@
 ARG DOCKER_IMAGE_TAG_PYTHON_FFMPEG=latest
 FROM mstmelody/python-ffmpeg:${DOCKER_IMAGE_TAG_PYTHON_FFMPEG}
-ARG VERSION_PYTHON=3.13.12 \
+ARG VERSION_PYTHON=3.13.13 \
     VERSION_RADIKO_PODCAST=latest
 RUN uv tool install --python "${VERSION_PYTHON}" "radikopodcast@${VERSION_RADIKO_PODCAST}" \
  && rm -rf /root/.cache/uv \
